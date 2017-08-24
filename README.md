@@ -1,24 +1,21 @@
-# README
+# This project is a example of how you can implement Sentry in RoR.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Example of success: GET '/'
+Execute the request without problems.
 
-Things you may want to cover:
+### Example of unknown error: GET '/fail'
+Execute the request with an unknown problem, in the moment of the of the error raise the event is saved on Sentry;
 
-* Ruby version
+### Example of success: GET '/send'
+Execute the request that could have a problem or not, in the moment that the occurs an error save it on Sentry and continue the request.
 
-* System dependencies
+# Esse projeto é um exemplo de como você pode implementar o Sentry no RoR.
 
-* Configuration
+### Exemplo de sucesso: GET '/'
+Executa a requisição sem problemas.
 
-* Database creation
+### Exemplo de erro desconhecido: GET '/fail'
+Executa uma requisição com problema desconhecido, no momento que acontece o erro esse evento é registrado no Sentry.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Exemplo de sucesso com envio de erro: GET '/send'
+Executa uma requisição que pode ter problema ou não, no momento que acontece o erro tratado o evento é registrado no Sentry e segue a requisição normalmente.

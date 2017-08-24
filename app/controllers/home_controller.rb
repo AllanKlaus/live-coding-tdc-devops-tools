@@ -9,6 +9,17 @@ class HomeController < ApplicationController
   end
 
   def send_to_sentry
+    error_on_send if params[:error]
+    render :json => return_json
+  end
+
+  private
+
+  def return_json
+    { name: 'Allan Klaus' }
+  end
+
+  def error_on_send
     Raven.capture_message("When I want to send an error to sentry",
       extra: {
         error: 'Failed cause I want',
@@ -18,12 +29,5 @@ class HomeController < ApplicationController
       },
       level: 'error'
     )
-    render :json => return_json
-  end
-
-  private
-
-  def return_json
-    { name: 'Allan Klaus' }
   end
 end
