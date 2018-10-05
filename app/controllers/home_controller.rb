@@ -13,6 +13,11 @@ class HomeController < ApplicationController
     render :json => return_json
   end
 
+  def loop
+    while(true)do
+    end
+  end
+
   private
 
   def return_json
