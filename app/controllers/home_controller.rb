@@ -7,10 +7,14 @@ class HomeController < ApplicationController
     fail 'Raising exception'
     render :json => return_json
   end
-
+  
   def send_to_sentry
-    error_on_send if params[:error]
+    fail StandardError if params[:error]
+    puts 'vagetais'
     render :json => return_json
+  rescue StandardError => e
+    error_on_send
+    render :pagina_error
   end
 
   def loop
