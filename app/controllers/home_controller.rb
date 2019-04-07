@@ -3,32 +3,30 @@ class HomeController < ApplicationController
     render :json => return_json
   end
 
-  def fail
+  def fail_page
     fail 'Raising exception'
-    render :json => return_json
-  end
-  
-  def send_to_sentry
-    fail StandardError if params[:error]
-    puts 'vagetais'
-    render :json => return_json
-  rescue StandardError => e
-    error_on_send
-    render :pagina_error
   end
 
-  def loop
-    while(true)do
-    end
+  def send_to_sentry
+    fail StandardError if params[:error]
+    render :json => return_json
+  rescue StandardError => e
+    send_error
+    render :error_page
+    # render :json => { error: e.message }
   end
 
   private
 
   def return_json
-    { name: 'Allan Klaus' }
+    {
+      event: 'TDC Floripa 2019',
+      trail: 'Devops Tools',
+      speaker: 'Allan Klaus'
+    }
   end
 
-  def error_on_send
+  def send_error
     Raven.capture_message("When I want to send an error to sentry",
       extra: {
         error: 'Failed cause I want',
