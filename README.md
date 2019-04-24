@@ -38,6 +38,16 @@ docker container start sentry-cron
 docker container start sentry-worker-1
 ```
 
+### Watch on youtube [portuguese]
+
+- [How make Sentry conteineres](https://www.youtube.com/watch?v=FqAXn1WrU_Y)
+- [How implement Sentry](https://www.youtube.com/watch?v=N4_z4uSPtJU)
+
+### Contact me
+
+- [Telegram](https://t.me/allan_klaus)
+- [Twitter](https://twitter.com/allan_klaus)
+
 # Esse projeto é um exemplo de como você pode implementar o Sentry no RoR.
 
 ### Exemplo de sucesso: GET '/'
@@ -77,3 +87,13 @@ docker container start my-sentry
 docker container start sentry-cron
 docker container start sentry-worker-1
 ```
+
+### Assista no youtube
+
+- [Como criar os conteineres do Sentry](https://www.youtube.com/watch?v=FqAXn1WrU_Y)
+- [Como implementar o Sentry](https://www.youtube.com/watch?v=N4_z4uSPtJU)
+
+### Fale comigo
+
+- [Telegram](https://t.me/allan_klaus)
+- [Twitter](https://twitter.com/allan_klaus)
